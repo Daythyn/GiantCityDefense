@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexagon: {fileID: 919132149155446097, guid: ee890130145a4a5469cc187502471e86, type: 3}
-  scale: 5
-  hexLayers: 3
-  offset: 0.1
+  scale: 0.25
+  hexLayers: 50
+  offset: 0.05
 --- !u!4 &225755276
 Transform:
   m_ObjectHideFlags: 0
@@ -734,10 +734,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1578086272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772a93c032432ab46adc7df3048bb639, type: 3}
+  m_Script: {fileID: 11500000, guid: 717307110151bd14cb4115bdc04215b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInput: 0
+  speed: 5
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
