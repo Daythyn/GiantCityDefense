@@ -12,6 +12,7 @@ public class Hexagen : MonoBehaviour
     public int hexLayers = 0;
     public float offset = 0;
     Vector3 center = new Vector3(0, 0, 0);
+    public Material mat;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class Hexagen : MonoBehaviour
         Vector3 objScale = new Vector3(1 * scale, 1 * scale, 1 *scale);
         GameObject obj;
 
+
         //Main Row
         //Gen First
         Vector3 start = center - new Vector3(0, 0, horiSpace * hexLayers);
@@ -41,6 +43,7 @@ public class Hexagen : MonoBehaviour
         {
             obj = Instantiate(hexagon, start, Quaternion.identity);
             obj.transform.localScale = objScale;
+            obj.transform.Find("Plane").GetComponent<MeshRenderer>().material = mat;
             start += new Vector3(0, 0, horiSpace);
         }
 

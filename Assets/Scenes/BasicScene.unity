@@ -151,10 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cec3e6077f19bc488eed1f27f2106ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexagon: {fileID: 919132149155446097, guid: ee890130145a4a5469cc187502471e86, type: 3}
+  hexagon: {fileID: 8224181307252695508, guid: df3d47a438dbd8b42a25772c3b4bf769, type: 3}
   scale: 0.25
   hexLayers: 50
   offset: 0.05
+  mat: {fileID: 2100000, guid: 585726bc3f8461844af996e9502ccf79, type: 2}
 --- !u!4 &225755276
 Transform:
   m_ObjectHideFlags: 0
