@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -23,6 +24,17 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        //transform.rotation = Quaternion.LookRotation((Vector3.RotateTowards(transform.position, target.transform.position, 1 * Time.deltaTime, 1 * Time.deltaTime)));
+        transform.rotation = Quaternion.LookRotation(target.transform.position - this.transform.position);
+
+
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy")){
+            Debug.Log("Target DOwn!!!1!");
+            Destroy(this.gameObject);
+        }
+    }
+
 }

@@ -9,11 +9,13 @@ public class Tower : MonoBehaviour
 {
 
     public GameObject projectile;
-    public float projSpeed = 5;
+    public float projSpeed = 10;
+    public float reloadTime = 1; //seconds, for some reason you need biggus numbers to make it work?
+    public float reload = 0;
 
     Vector3 spawn;
 
-    private Boolean hasSpawn = false;
+    private Boolean hasShot = true;
 
 
     // Start is called before the first frame update
@@ -26,17 +28,28 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(reload > 0){
+            reload -= Time.deltaTime;
+        } else if(hasShot == false){
+            hasShot = true;
+        }
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (!hasSpawn)
+
+        if (hasShot == true)
         {
-            hasSpawn = true;
-            GameObject proj = Instantiate(projectile, spawn, transform.rotation);
-            proj.GetComponent<Projectile>().target = other.gameObject;
-            
+            if (other.CompareTag("Enemy"))
+            {
+
+                GameObject proj = Instantiate(projectile, spawn, Quaternion.LookRotation(other.transform.position - spawn));
+                proj.GetComponent<Projectile>().speed = projSpeed;
+                proj.GetComponent<Projectile>().target = other.gameObject;
+
+                hasShot = false;
+                reload = reloadTime * Time.deltaTime;
+            }
         }
 
     }
