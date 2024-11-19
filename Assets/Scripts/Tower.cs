@@ -48,7 +48,7 @@ public class Tower : MonoBehaviour
                 proj.GetComponent<Projectile>().target = other.gameObject;
 
                 hasShot = false;
-                reload = reloadTime * Time.deltaTime;
+                reload = reloadTime;
             }
         }
 
