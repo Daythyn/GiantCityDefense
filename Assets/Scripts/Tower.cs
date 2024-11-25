@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 
-public class Tower : MonoBehaviour
+public class Tower : BuildingBase
 {
 
     public GameObject projectile;
@@ -22,6 +23,7 @@ public class Tower : MonoBehaviour
     void Start()
     {
         spawn = new Vector3(this.transform.localPosition.x, this.transform.localScale.y + 1f, this.transform.localPosition.z);
+        test();
 
     }
 
