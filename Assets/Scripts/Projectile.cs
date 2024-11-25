@@ -9,7 +9,8 @@ public class Projectile : MonoBehaviour
 {
 
     public GameObject target;
-    public float speed = 1;
+    public float speed;
+    public float damage;
 
     public Vector3 targetLastPos;
 
@@ -44,8 +45,8 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Target DOwn!!!1!");
-            Destroy(other.gameObject);
+            Debug.Log("Target HIT!!!1!");
+            other.GetComponent<EnemyBase>().takeDamage(damage);
             Destroy(this.gameObject);
         }
     }

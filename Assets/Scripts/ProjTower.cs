@@ -8,29 +8,12 @@ using UnityEngine;
 public class ProjTower : BuildingBase
 {
 
-    public float HealthMax;
-    private float HealthCurrent;
-
-    public float reloadTime;
-    public float reloadCurrent = 0;
-
     public GameObject turret;
     public float turretTurnSpeed;
-
     public GameObject projectile;
     public float projectileSpeed;
     public float projectileDamage;
-
-    public int range;
-    private SphereCollider detect;
-    private List<GameObject> targets = new List<GameObject>();
-    public GameObject targetCurrent = null;
-
     private Boolean canShoot;
-
-
-
-
 
 
     // Start is called before the first frame update
@@ -41,7 +24,7 @@ public class ProjTower : BuildingBase
         detect = this.GetComponent<SphereCollider>();
         detect.radius = range;
 
-        HealthCurrent = HealthMax;
+        healthCurrent = healthMax;
         canShoot = true;
     }
 
@@ -83,12 +66,15 @@ public class ProjTower : BuildingBase
             GameObject proj = Instantiate(projectile, turret.transform.position, Quaternion.LookRotation(targetCurrent.transform.position - turret.transform.position));
                 proj.GetComponent<Projectile>().speed = projectileSpeed;
                 proj.GetComponent<Projectile>().target = targetCurrent;
+                proj.GetComponent<Projectile>().damage = projectileDamage;
 
                 reloadCurrent = reloadTime;
                 Debug.Log("FIRE");
         }
         canShoot = true;
     }
+
+    
 
 
 

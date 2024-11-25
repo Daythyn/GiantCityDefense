@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
     void spawn(GameObject enemy){
         Vector3 point = this.transform.position + new Vector3(0,0,Random.Range(-width, width));
         GameObject baby = Instantiate(enemy, point, Quaternion.LookRotation(player.transform.position - point));
-        baby.GetComponent<EnemyWonder>().mainTarget = player.gameObject;
+        baby.GetComponent<Enemy>().targetMain = player.gameObject;
 
         Debug.Log("Spawned baby at  " + point + "  !");
         time = timeCooldown;
