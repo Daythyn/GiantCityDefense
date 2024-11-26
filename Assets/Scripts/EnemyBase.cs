@@ -9,8 +9,15 @@ public class EnemyBase : MonoBehaviour
     public float healthMax;
     public float healthCurrent;
     public float speed;
+    public float damage;
 
-    public float detectRange;
+    public float rangeDetect;
+    public float rangeAttack;
+
+    public float reloadTime;
+    public float reloadCurrent;
+
+
 
     public NavMeshAgent agent;
     public GameObject target = null;
@@ -30,6 +37,22 @@ public class EnemyBase : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void targetInit(){
+
+            RaycastHit hit;
+            // Does the ray intersect any objects excluding the player layer
+            if (Physics.Raycast(transform.position, targetMain.transform.position - transform.position, out hit, 300, LayerMask.GetMask("Building", "Player"))){
+
+                Debug.DrawRay(transform.position, targetMain.transform.position - transform.position * hit.distance, Color.yellow); 
+                Debug.Log("Did Hit" + hit.rigidbody.gameObject); 
+
+                target = hit.rigidbody.gameObject;
+            }
+    }
+
+
+
 
     public void test(){
         Debug.Log("Ahoy!");

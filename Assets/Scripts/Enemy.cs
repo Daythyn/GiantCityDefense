@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,14 +17,42 @@ public class Enemy : EnemyBase
         target = targetMain;
 
         healthCurrent = healthMax;
+
+
+        targetInit();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(target == null){
-            target = targetMain;
+        if(target == null || target.IsDestroyed()){
+            targetInit();
         }
-        agent.destination = target.transform.position;
+        agent.destination = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z); //Feels really expensive to run
+        transform.LookAt(targetMain.transform.position);
+
+
+        if(reloadCurrent > 0){
+            reloadCurrent -= Time.deltaTime;
+        } else if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z)) <= rangeAttack){
+            
+            //agent.updatePosition = false;
+
+            target.GetComponent<BuildingBase>().takeDamage(damage);
+            Debug.Log(this.gameObject + " Dealt " + damage + " Damage to " + target);
+            reloadCurrent = reloadTime;
+        }
+        //} else if(agent.updatePosition == false){
+            //agent.updatePosition = true;
+        //}
+
+
+
+
+
     }
+
+    
+
 }

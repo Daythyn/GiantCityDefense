@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 310379948906764928}
   - component: {fileID: 7055897010389038010}
   - component: {fileID: -3287000513509241886}
+  - component: {fileID: 6578822057345989651}
+  - component: {fileID: 2921499121625001830}
   m_Layer: 0
   m_Name: ProjTower
   m_TagString: Untagged
@@ -131,16 +133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6fe1df57b49a8448b3b83ab4008809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 0
+  healthMax: 100
+  healthCurrent: 0
   reloadTime: 1
   reloadCurrent: 0
+  range: 5
+  detect: {fileID: 0}
+  targets: []
+  targetCurrent: {fileID: 0}
   turret: {fileID: 1724243647101831733}
   turretTurnSpeed: 0.1
   projectile: {fileID: 4713487174056663453, guid: da4af7d80a1a4704b9efffd532c8ebd5, type: 3}
   projectileSpeed: 50
   projectileDamage: 1
-  range: 5
-  targetCurrent: {fileID: 0}
 --- !u!135 &7055897010389038010
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -169,7 +174,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3803508827062753912}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 0
   m_Extents: {x: 0.75, y: 0.5, z: 0.75}
@@ -178,6 +183,54 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &6578822057345989651
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803508827062753912}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 0.1
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &2921499121625001830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803508827062753912}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6144017019566676656
 PrefabInstance:
   m_ObjectHideFlags: 0
