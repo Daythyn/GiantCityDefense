@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5707002594027364145}
+  - component: {fileID: -1096927350417320474}
   - component: {fileID: -1974986486175437785}
   - component: {fileID: -1129109159473144384}
   - component: {fileID: 8367763377881097664}
-  - component: {fileID: -1096927350417320474}
   m_Layer: 10
   m_Name: Wall
   m_TagString: Tower
@@ -36,6 +36,26 @@ Transform:
   - {fileID: 5177987264445614674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1096927350417320474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3733492141288462313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f8ef6bad20bd3428ba359b0ba778b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 200
+  healthCurrent: 0
+  reloadTime: 0
+  reloadCurrent: 0
+  range: 0
+  detect: {fileID: 0}
+  targets: []
+  targetCurrent: {fileID: 0}
 --- !u!208 &-1974986486175437785
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -100,26 +120,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1096927350417320474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3733492141288462313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f8ef6bad20bd3428ba359b0ba778b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthMax: 200
-  healthCurrent: 0
-  reloadTime: 0
-  reloadCurrent: 0
-  range: 0
-  detect: {fileID: 0}
-  targets: []
-  targetCurrent: {fileID: 0}
 --- !u!1001 &453501108884261422
 PrefabInstance:
   m_ObjectHideFlags: 0
