@@ -29,6 +29,16 @@ public class Enemy : EnemyBase
         if(target == null || target.IsDestroyed()){
             targetInit();
         }
+
+        if(targetFindTimeCurrent > 0){
+            targetFindTimeCurrent -= Time.deltaTime;
+        } else {
+            targetInit();
+            targetFindTimeCurrent = targetFindTime;
+        }
+
+
+
         agent.destination = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z); //Feels really expensive to run
         transform.LookAt(targetMain.transform.position);
 
@@ -46,10 +56,6 @@ public class Enemy : EnemyBase
         //} else if(agent.updatePosition == false){
             //agent.updatePosition = true;
         //}
-
-
-
-
 
     }
 

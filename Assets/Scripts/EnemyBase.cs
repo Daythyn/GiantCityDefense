@@ -20,6 +20,8 @@ public class EnemyBase : MonoBehaviour
 
 
     public NavMeshAgent agent;
+    public float targetFindTime = 10; //Seconds between attempts to update/find a target
+    public float targetFindTimeCurrent;
     public GameObject target = null;
     public GameObject targetMain;
     public GameObject targetSecondary;
