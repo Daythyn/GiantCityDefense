@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resource: {fileID: 0}
   attachPos: {x: 0, y: 0, z: 0}
+  hasResource: 0
   cooldown: 10
   cooldownCurrent: 0
 --- !u!65 &3772730277179646276
@@ -85,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4
   m_Handedness: 0
   m_AttachTransform: {fileID: 4830021552498263544}
   m_KeepSelectedTargetValid: 1
