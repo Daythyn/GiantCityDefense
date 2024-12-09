@@ -73,6 +73,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2.25
       objectReference: {fileID: 0}
+    - target: {fileID: 2921499121625001830, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 3803508827062753912, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
       propertyPath: m_Name
       value: ProjTower Variant
