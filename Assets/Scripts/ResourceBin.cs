@@ -10,6 +10,7 @@ public class ResourceBin : MonoBehaviour
 
     public TMP_Text textStone;
     public TMP_Text textWood;
+    public GameObject collectParticles;
 
     private void Update()
     {
@@ -31,6 +32,6 @@ public class ResourceBin : MonoBehaviour
             Destroy(other.gameObject);
             wood += 1;
         }
-
+        Instantiate(collectParticles, this.transform.position, this.transform.rotation);
     }
 }
