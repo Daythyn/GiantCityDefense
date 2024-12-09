@@ -286,8 +286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthMax: 20
   healthCurrent: 0
-  speed: 5
-  damage: 20
+  speed: 10
+  damage: 20000
   rangeDetect: 0
   rangeAttack: 2
   reloadTime: 2
