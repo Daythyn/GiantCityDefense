@@ -46,10 +46,10 @@ public class EnemyBase : MonoBehaviour
 
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, targetMain.transform.position - transform.position, out hit, 300, LayerMask.GetMask("Building", "Player"))){
+            if (Physics.Raycast(transform.position, targetMain.transform.position - transform.position, out hit, 500, LayerMask.GetMask("Building", "Player"))){
 
                 Debug.DrawRay(transform.position, targetMain.transform.position - transform.position * hit.distance, Color.yellow); 
-                Debug.Log("Did Hit" + hit.rigidbody.gameObject); 
+                Debug.Log("Got Ray Hit" + hit.collider.gameObject); 
 
                 target = hit.rigidbody.gameObject;
             }

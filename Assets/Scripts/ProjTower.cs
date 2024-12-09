@@ -63,7 +63,7 @@ public class ProjTower : BuildingBase
         
     }
     void shoot(){
-        Debug.Log("Preparing to Fire");
+        //Debug.Log("Preparing to Fire");
         if(!targetCurrent.IsDestroyed()){
 
             GameObject proj = Instantiate(projectile, turret.transform.position, Quaternion.LookRotation(targetCurrent.transform.position - turret.transform.position));
@@ -73,7 +73,7 @@ public class ProjTower : BuildingBase
                 proj.GetComponent<Projectile>().damage = projectileDamage;
 
                 reloadCurrent = reloadTime;
-                Debug.Log("FIRE");
+                //Debug.Log("FIRE");
         }
         canShoot = true;
     }
@@ -86,7 +86,7 @@ public class ProjTower : BuildingBase
     {
         if(other.tag == "Enemy"){
             targets.Add(other.gameObject);
-            Debug.Log("Found: " + other.gameObject.name);
+            //Debug.Log("Found: " + other.gameObject.name);
         }
         
     }
@@ -97,6 +97,6 @@ public class ProjTower : BuildingBase
         {
             targets.Remove(other.gameObject);
         }
-        Debug.Log("Lost: " + other.gameObject.name);
+        //Debug.Log("Lost: " + other.gameObject.name);
     }
 }

@@ -47,14 +47,14 @@ public class Enemy : EnemyBase
             reloadCurrent -= Time.deltaTime;
         } else if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z)) <= rangeAttack){
             
-            //agent.updatePosition = false;
+            agent.updatePosition = false;
 
             target.GetComponent<BuildingBase>().takeDamage(damage);
             Debug.Log(this.gameObject + " Dealt " + damage + " Damage to " + target);
             reloadCurrent = reloadTime;
         }
         //} else if(agent.updatePosition == false){
-            //agent.updatePosition = true;
+            agent.updatePosition = true;
         //}
 
     }
