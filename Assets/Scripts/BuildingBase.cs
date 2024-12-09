@@ -16,7 +16,7 @@ public class BuildingBase : MonoBehaviour
     public SphereCollider detect;
     public List<GameObject> targets = new List<GameObject>();
     public GameObject targetCurrent = null;
-    public AudioSource audio;
+    public AudioSource boomSound;
     public GameObject explosion;
 
 
@@ -25,7 +25,7 @@ public class BuildingBase : MonoBehaviour
     void Start()
     {
         healthCurrent = healthMax;
-        audio.GetComponent<AudioSource>();
+        boomSound.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class BuildingBase : MonoBehaviour
         if (healthCurrent <= 0)
         {
             Debug.Log(this.name + "Died");
-            audio.Play();
+            boomSound.Play();
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
         }

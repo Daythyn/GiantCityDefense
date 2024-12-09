@@ -26,17 +26,19 @@ public class EnemyBase : MonoBehaviour
     public GameObject targetMain;
     public GameObject targetSecondary;
     public GameObject deathParticles;
+    private AudioSource deathSound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        deathSound = GetComponent<AudioSource>();
     }
 
     public void takeDamage(float damage){
         healthCurrent -= damage;
         if(healthCurrent <= 0){
             Instantiate(deathParticles, this.transform.position, this.transform.rotation);
+            deathSound.Play();
             Debug.Log(this.name + "Died");
             Destroy(this.gameObject);
         }
