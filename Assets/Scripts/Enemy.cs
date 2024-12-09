@@ -49,7 +49,12 @@ public class Enemy : EnemyBase
             
             agent.updatePosition = false;
 
-            target.GetComponent<BuildingBase>().takeDamage(damage);
+            if(target.tag == "Bulding"){
+                target.GetComponent<BuildingBase>().takeDamage(damage);
+            } else if(target.tag == "Player"){
+                target.GetComponent<PlayerBody>().takeDamage(damage);
+            }
+            
             Debug.Log(this.gameObject + " Dealt " + damage + " Damage to " + target);
             reloadCurrent = reloadTime;
         }

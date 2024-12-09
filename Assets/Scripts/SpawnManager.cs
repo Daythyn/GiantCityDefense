@@ -54,7 +54,10 @@ public class SpawnManager : MonoBehaviour
         textWave.text = "Wave: " + wave;
         textTime.text = cooldownCurrent.ToString();
 
-
+        if(wave > 8){
+            
+            SceneManager.LoadScene("Credits");
+        }
     }
 
     void skip()
@@ -101,8 +104,7 @@ public class SpawnManager : MonoBehaviour
                 spawn2.spawn(gobbo, 70);
                 spawn2.spawn(ogre, 3);
                 break;
-            case 9:
-            SceneManager.LoadScene("Credits");
+            default:
             break;
         }
         wave += 1;

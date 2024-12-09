@@ -9,7 +9,9 @@ public class EnemyBase : MonoBehaviour
     public float healthMax;
     public float healthCurrent;
     public float speed;
-    public float damage;
+    public int damage;
+
+    public Status status;
 
     public float rangeDetect;
     public float rangeAttack;
@@ -33,17 +35,14 @@ public class EnemyBase : MonoBehaviour
     {
         deathSound = GetComponent<AudioSource>();
     }
-    void OnDestroy()
-    {
-        Instantiate(deathParticles, this.transform.position, this.transform.rotation);
-        deathSound.Play();
-    }
+
     public void takeDamage(float damage)
     {
         healthCurrent -= damage;
         if (healthCurrent <= 0)
         {
-
+            status.kills ++;
+            Instantiate(deathParticles, this.transform.position, this.transform.rotation);
             Debug.Log(this.name + "Died");
             Destroy(this.gameObject);
         }
@@ -54,13 +53,13 @@ public class EnemyBase : MonoBehaviour
 
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, targetMain.transform.position - transform.position, out hit, 500, LayerMask.GetMask("Building", "Player")))
+        if (Physics.Raycast(transform.position, targetMain.transform.position - transform.position, out hit, 500, LayerMask.GetMask("Targetable","Player","Building")))
         {
 
             Debug.DrawRay(transform.position, targetMain.transform.position - transform.position * hit.distance, Color.yellow);
             Debug.Log("Got Ray Hit" + hit.collider.gameObject);
 
-            target = hit.rigidbody.gameObject;
+            target = hit.collider.gameObject;
         }
     }
 

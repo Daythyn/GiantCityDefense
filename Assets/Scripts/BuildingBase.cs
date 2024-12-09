@@ -34,16 +34,12 @@ public class BuildingBase : MonoBehaviour
 
     }
 
-    public void OnDestroy()
-    {
-        boomSound.Play();
-        Instantiate(explosion, this.transform.position, this.transform.rotation);
-    }
     public void takeDamage(float damage)
     {
         healthCurrent -= damage;
         if (healthCurrent <= 0)
         {
+            Instantiate(explosion, this.transform.position, this.transform.rotation);
             Debug.Log(this.name + "Died");
             Destroy(this.gameObject);
         }

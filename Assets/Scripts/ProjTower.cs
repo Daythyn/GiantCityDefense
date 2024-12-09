@@ -12,7 +12,7 @@ public class ProjTower : BuildingBase
     public float turretTurnSpeed;
     public GameObject projectile;
     public float projectileSpeed;
-    public float projectileDamage;
+    public int projectileDamage;
     private Boolean canShoot;
     Animator animator;
 

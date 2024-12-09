@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public float time = 0;
     public float timeCooldown;
     public GameObject player;
+    public Status status;
 
 
 
@@ -35,6 +36,8 @@ public class Spawner : MonoBehaviour
                 Vector3 point = this.transform.position + new Vector3(0, 0, Random.Range(-width, width));
                 GameObject baby = Instantiate(enemy, point, Quaternion.LookRotation(player.transform.position - point));
                 baby.GetComponent<Enemy>().targetMain = player.gameObject;
+                baby.GetComponent<Enemy>().status = status;
+
 
                 time = timeCooldown;
                 count--;

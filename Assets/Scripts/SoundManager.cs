@@ -6,6 +6,10 @@ public class SoundManager : MonoBehaviour
 {
     public AudioClip track1;
     public AudioClip track2;
+    public AudioClip track3;
+    public AudioClip track4;
+    public AudioClip track5;
+    public AudioClip track6;
     private AudioSource music;
 
     // Start is called before the first frame update
@@ -24,9 +28,26 @@ public class SoundManager : MonoBehaviour
             music.Play();
         }
 
-        if(!music.isPlaying && music.clip == track2){
+        else if(!music.isPlaying && music.clip == track2){
+            music.clip = track3;
+            music.Play();
+        }
+        else if(!music.isPlaying && music.clip == track3){
+            music.clip = track4;
+            music.Play();
+        }
+        else if(!music.isPlaying && music.clip == track4){
+            music.clip = track5;
+            music.Play();
+        }
+        else if(!music.isPlaying && music.clip == track5){
+            music.clip = track6;
+            music.Play();
+        }
+        else if(!music.isPlaying && music.clip == track6){
             music.clip = track1;
             music.Play();
         }
+        
     }
 }
