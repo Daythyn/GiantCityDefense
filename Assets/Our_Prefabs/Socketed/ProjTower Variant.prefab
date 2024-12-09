@@ -67,11 +67,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2921499121625001830, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 2921499121625001830, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
       propertyPath: m_Size.z
-      value: 2
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 3803508827062753912, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
       propertyPath: m_Name
@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6578822057345989651, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
-      value: 0
+      value: 648
       objectReference: {fileID: 0}
     - target: {fileID: 7055897010389038010, guid: acdfa140d3b29ed4c9993800ea96eeec, type: 3}
       propertyPath: m_IsTrigger

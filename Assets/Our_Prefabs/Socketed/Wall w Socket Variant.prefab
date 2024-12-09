@@ -65,6 +65,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1129109159473144384, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 648
+      objectReference: {fileID: 0}
     - target: {fileID: 1556305278655557764, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
       propertyPath: m_Layer
       value: 10
