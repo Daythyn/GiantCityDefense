@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500dccf70cd95f747bd2a67046c4a6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 20
+  healthMax: 20000
   healthCurrent: 0
   speed: 5
   damage: 20
@@ -748,6 +748,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetMain: {fileID: 0}
   targetSecondary: {fileID: 0}
+  deathParticles: {fileID: 0}
 --- !u!65 &5600696779730360308
 BoxCollider:
   m_ObjectHideFlags: 0
