@@ -14,6 +14,7 @@ public class ProjTower : BuildingBase
     public float projectileSpeed;
     public float projectileDamage;
     private Boolean canShoot;
+    Animator animator;
 
 
     // Start is called before the first frame update
@@ -26,6 +27,8 @@ public class ProjTower : BuildingBase
 
         healthCurrent = healthMax;
         canShoot = true;
+
+        animator.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class ProjTower : BuildingBase
         if(!targetCurrent.IsDestroyed()){
 
             GameObject proj = Instantiate(projectile, turret.transform.position, Quaternion.LookRotation(targetCurrent.transform.position - turret.transform.position));
+                animator.SetBool("Shoot", true);
                 proj.GetComponent<Projectile>().speed = projectileSpeed;
                 proj.GetComponent<Projectile>().target = targetCurrent;
                 proj.GetComponent<Projectile>().damage = projectileDamage;
