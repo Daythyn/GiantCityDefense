@@ -16,11 +16,7 @@ public class BuildingBase : MonoBehaviour
     public SphereCollider detect;
     public List<GameObject> targets = new List<GameObject>();
     public GameObject targetCurrent = null;
-<<<<<<< HEAD
-    public AudioSource boom;
-=======
     public AudioSource boomSound;
->>>>>>> 85137bfbf035f3b50e133e1a9f0d1bf4e94e16fb
     public GameObject explosion;
 
 
@@ -29,11 +25,7 @@ public class BuildingBase : MonoBehaviour
     void Start()
     {
         healthCurrent = healthMax;
-<<<<<<< HEAD
-        boom.GetComponent<AudioSource>();
-=======
         boomSound.GetComponent<AudioSource>();
->>>>>>> 85137bfbf035f3b50e133e1a9f0d1bf4e94e16fb
     }
 
     // Update is called once per frame
@@ -42,19 +34,17 @@ public class BuildingBase : MonoBehaviour
 
     }
 
-
+    public void OnDestroy()
+    {
+        boomSound.Play();
+        Instantiate(explosion, this.transform.position, this.transform.rotation);
+    }
     public void takeDamage(float damage)
     {
         healthCurrent -= damage;
         if (healthCurrent <= 0)
         {
             Debug.Log(this.name + "Died");
-<<<<<<< HEAD
-            boom.Play();
-=======
-            boomSound.Play();
->>>>>>> 85137bfbf035f3b50e133e1a9f0d1bf4e94e16fb
-            Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
         }
     }

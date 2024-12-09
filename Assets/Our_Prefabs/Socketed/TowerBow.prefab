@@ -60,7 +60,7 @@ MonoBehaviour:
   detect: {fileID: 7142008797760357389}
   targets: []
   targetCurrent: {fileID: 0}
-  boom: {fileID: -4678077677931192497}
+  boomSound: {fileID: -4678077677931192497}
   explosion: {fileID: 3422218948731049784, guid: 0e029dbac0d999246b3b0641df2d829e, type: 3}
   turret: {fileID: 4873469531667503805}
   turretTurnSpeed: 1
@@ -278,7 +278,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

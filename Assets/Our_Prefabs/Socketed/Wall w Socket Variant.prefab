@@ -62,7 +62,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1160504721418951443, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
+      propertyPath: MinDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1160504721418951443, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1160504721418951443, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1129109159473144384, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
@@ -75,6 +83,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1096927350417320474, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
       propertyPath: boom
+      value: 
+      objectReference: {fileID: 7463882241833227012}
+    - target: {fileID: -1096927350417320474, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}
+      propertyPath: boomSound
       value: 
       objectReference: {fileID: 7463882241833227012}
     - target: {fileID: -1096927350417320474, guid: 2c8d6d03d212b084cb9e23c82e0cb816, type: 3}

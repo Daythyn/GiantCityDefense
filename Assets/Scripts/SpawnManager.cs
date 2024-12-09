@@ -70,11 +70,11 @@ public class SpawnManager : MonoBehaviour
                 spawn1.spawn(gobbo, 1);
                 break;
             case 2:
-                spawn2.spawn(gobbo, 1);
+                spawn2.spawn(gobbo, 10);
                 break;
             case 3:
-                spawn1.spawn(gobbo, 1);
-                spawn2.spawn(gobbo, 1);
+                spawn1.spawn(gobbo, 10);
+                spawn2.spawn(gobbo, 10);
                 break;
             case 4:
                 spawn2.spawn(gobbo, 20);

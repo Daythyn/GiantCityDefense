@@ -1414,6 +1414,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &82721775 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7463882241833227012, guid: 4a7b88ba92dd15647b640160c604d08d, type: 3}
+  m_PrefabInstance: {fileID: 1398432205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &97253080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4992645434010660475, guid: 5f7229e86384f1f4d83ab832c4d697af, type: 3}
@@ -23413,6 +23418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8698394966521487887, guid: 4a7b88ba92dd15647b640160c604d08d, type: 3}
+      propertyPath: boomSound
+      value: 
+      objectReference: {fileID: 82721775}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36071,9 +36080,4 @@ SceneRoots:
   - {fileID: 1330319121}
   - {fileID: 552763060}
   - {fileID: 1398432205}
-<<<<<<< HEAD
-=======
-  - {fileID: 1426552058}
-  - {fileID: 960896349}
   - {fileID: 546505164}
->>>>>>> 85137bfbf035f3b50e133e1a9f0d1bf4e94e16fb
