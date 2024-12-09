@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ using UnityEngine.UI;
 public class SpawnManager : MonoBehaviour
 {
 
-    public GameObject[] spawners;
+    public Spawner spawn1;
+    public Spawner spawn2;
     public int wave = 1;
 
     public float cooldown;
@@ -26,15 +28,18 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-button.onClick.AddListener(skip);
+
+        Debug.Log(spawn1 + " " + spawn2);
+        button.onClick.AddListener(skip);
 
         click = GetComponent<AudioSource>();
+        Debug.Log("Bonk");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cooldownCurrent > 0)
+        if (cooldownCurrent >= 0)
         {
             cooldownCurrent -= Time.deltaTime;
         }
@@ -51,49 +56,49 @@ button.onClick.AddListener(skip);
 
     }
 
-    void skip(){
-        cooldownCurrent = 0;
+    void skip()
+    {
+        cooldownCurrent = 1;
         click.Play();
     }
 
     void spawnWave()
     {
-        int rand = Random.Range(0, 100 + wave);
         switch (wave)
         {
             case 1:
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 100);
+                spawn1.spawn(gobbo, 1);
                 break;
             case 2:
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 10);
+                spawn2.spawn(gobbo, 1);
                 break;
             case 3:
-                spawners[0 % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 10);
-                spawners[1 % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 10);
+                spawn1.spawn(gobbo, 1);
+                spawn2.spawn(gobbo, 1);
                 break;
             case 4:
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 20);
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(ogre, 1);
+                spawn2.spawn(gobbo, 20);
+                spawn2.spawn(ogre, 1);
                 break;
             case 5:
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 20);
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 20);
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(ogre, 1);
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(ogre, 1);
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(ogre, 1);
+                spawn1.spawn(gobbo, 20);
+                spawn2.spawn(gobbo, 20);
+                spawn1.spawn(ogre, 1);
+                spawn2.spawn(ogre, 1);
+                spawn2.spawn(ogre, 1);
                 break;
             case 6:
-                spawners[0 % spawners.Length].GetComponent<Spawner>().spawn(ogre, 5);
-                spawners[1 % spawners.Length].GetComponent<Spawner>().spawn(ogre, 5);
+                spawn1.spawn(ogre, 5);
+                spawn2.spawn(ogre, 5);
                 break;
             case 7:
-                spawners[rand % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 50);
+                spawn1.spawn(gobbo, 50);
                 break;
             case 8:
-                spawners[0 % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 30);
-                spawners[1 % spawners.Length].GetComponent<Spawner>().spawn(ogre, 7);
-                spawners[0 % spawners.Length].GetComponent<Spawner>().spawn(gobbo, 70);
-                spawners[1 % spawners.Length].GetComponent<Spawner>().spawn(ogre, 3);
+                spawn1.spawn(gobbo, 30);
+                spawn1.spawn(ogre, 7);
+                spawn2.spawn(gobbo, 70);
+                spawn2.spawn(ogre, 3);
                 break;
         }
         wave += 1;

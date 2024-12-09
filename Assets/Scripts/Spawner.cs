@@ -21,10 +21,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeCooldown > 0)
-        {
-            time -= Time.deltaTime;
-        }
+
     }
 
     public void spawn(GameObject enemy, int count)
@@ -33,7 +30,7 @@ public class Spawner : MonoBehaviour
 
         while (count > 0)
         {
-            if (time >= 0)
+            if (time <= 0)
             {
                 Vector3 point = this.transform.position + new Vector3(0, 0, Random.Range(-width, width));
                 GameObject baby = Instantiate(enemy, point, Quaternion.LookRotation(player.transform.position - point));
@@ -42,6 +39,16 @@ public class Spawner : MonoBehaviour
                 time = timeCooldown;
                 count--;
             }
+            else
+            {
+
+                if (timeCooldown > 0)
+                {
+                    time -= Time.deltaTime;
+                }
+            }
+
+
 
         }
     }

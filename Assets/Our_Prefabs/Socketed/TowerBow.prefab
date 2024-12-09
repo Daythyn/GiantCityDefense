@@ -60,7 +60,7 @@ MonoBehaviour:
   detect: {fileID: 7142008797760357389}
   targets: []
   targetCurrent: {fileID: 0}
-  audio: {fileID: 0}
+  boom: {fileID: -4678077677931192497}
   explosion: {fileID: 3422218948731049784, guid: 0e029dbac0d999246b3b0641df2d829e, type: 3}
   turret: {fileID: 4873469531667503805}
   turretTurnSpeed: 1
@@ -269,7 +269,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a7aed8340a0ddd45a5849c4348df764, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
