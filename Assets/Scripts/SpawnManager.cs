@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
@@ -100,6 +101,9 @@ public class SpawnManager : MonoBehaviour
                 spawn2.spawn(gobbo, 70);
                 spawn2.spawn(ogre, 3);
                 break;
+            case 9:
+            SceneManager.LoadScene("Credits");
+            break;
         }
         wave += 1;
     }
