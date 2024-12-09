@@ -298,6 +298,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetMain: {fileID: 0}
   targetSecondary: {fileID: 0}
+  deathParticles: {fileID: 968979818206804011, guid: 0ec1f73d4cb598646a01a4174919a75b, type: 3}
 --- !u!65 &6575287939167402107
 BoxCollider:
   m_ObjectHideFlags: 0

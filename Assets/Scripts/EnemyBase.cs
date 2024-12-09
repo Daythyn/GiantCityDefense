@@ -25,6 +25,7 @@ public class EnemyBase : MonoBehaviour
     public GameObject target = null;
     public GameObject targetMain;
     public GameObject targetSecondary;
+    public GameObject deathParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class EnemyBase : MonoBehaviour
     public void takeDamage(float damage){
         healthCurrent -= damage;
         if(healthCurrent <= 0){
+            Instantiate(deathParticles, deathParticles.transform.position, deathParticles.transform.rotation);
             Debug.Log(this.name + "Died");
             Destroy(this.gameObject);
         }
