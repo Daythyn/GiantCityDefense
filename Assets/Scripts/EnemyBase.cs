@@ -36,7 +36,7 @@ public class EnemyBase : MonoBehaviour
     public void takeDamage(float damage){
         healthCurrent -= damage;
         if(healthCurrent <= 0){
-            Instantiate(deathParticles, deathParticles.transform.position, deathParticles.transform.rotation);
+            Instantiate(deathParticles, this.transform.position, this.transform.rotation);
             Debug.Log(this.name + "Died");
             Destroy(this.gameObject);
         }
