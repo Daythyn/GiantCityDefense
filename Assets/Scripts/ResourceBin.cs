@@ -12,6 +12,13 @@ public class ResourceBin : MonoBehaviour
     public TMP_Text textWood;
     public GameObject collectParticles;
 
+    private AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         textStone.text = "Stone: " + stone;
@@ -25,13 +32,15 @@ public class ResourceBin : MonoBehaviour
         {
             Destroy(other.gameObject);
             stone += 1;
-
+            Instantiate(collectParticles, this.transform.position, this.transform.rotation);
+            audio.Play();
         }
         else if (other.tag == "Wood")
         {
             Destroy(other.gameObject);
             wood += 1;
+            Instantiate(collectParticles, this.transform.position, this.transform.rotation);
+            audio.Play();
         }
-        Instantiate(collectParticles, this.transform.position, this.transform.rotation);
     }
 }
